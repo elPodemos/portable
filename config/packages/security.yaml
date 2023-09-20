@@ -40,7 +40,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/api/portables, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/portables, roles: IS_AUTHENTICATED_FULLY, , methods: [WATCH]}
         - { path: ^/api/user, roles: IS_AUTHENTICATED_FULLY, methods: [GET] } #route accessible à n'importe quel user connecté, en get
         - { path: promote$, roles: ROLE_ADMIN } #route qui termine par promote accessible uniquement aux user admin
 
